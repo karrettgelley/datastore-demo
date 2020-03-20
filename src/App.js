@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { DataStore } from '@aws-amplify/datastore';
+import { User } from './models';
 
 function App() {
+  const handleAddUser = async () => {
+    try {
+      const newUser = await DataStore.save(
+        new User({ firstName: 'aws', lastName: 'datastore' }),
+      );
+      console.log('new user :', newUser);
+    } catch (e) {
+      console.error('failed to add user: ', e);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleAddUser}>add a user</button>
     </div>
   );
 }

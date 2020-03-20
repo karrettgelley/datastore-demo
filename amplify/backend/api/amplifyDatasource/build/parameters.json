@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "amplifyDatasource",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "S3DeploymentBucket": "amplify-datastore-demo-master-55740-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/36e15b0bc4204d7afee3a895d5bc1e0496aaeff3"
+}
